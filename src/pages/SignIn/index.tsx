@@ -45,11 +45,15 @@ const SignIn: React.FC = () => {
         }
 
         // Dispara um Toast
-        addToast();
+        addToast({
+          type: 'error',
+          title: 'Erro na autenticação',
+          description: 'Cheque as credenciais',
+        });
         console.log(err);
       }
     },
-    [signIn],
+    [signIn, addToast],
   );
 
   return (
